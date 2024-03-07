@@ -246,7 +246,6 @@ public abstract class AbstractSuppressionAnalyzer extends AbstractAnalyzer {
             if (!repoFile.isFile() || repoFile.length() <= 1L) {
                 repoEmpty = true;
                 LOGGER.warn("Hosted Suppressions file is empty or missing - attempting to force the update");
-                getSettings().setBoolean(Settings.KEYS.HOSTED_SUPPRESSIONS_FORCEUPDATE, true);
             }
             if ((!autoupdate && forceupdate) || (autoupdate && repoEmpty)) {
                 if (engine == null) {
